@@ -1,0 +1,10 @@
+Color para el menú: #212F3D
+Color para hipervínculos del menú: #FBFCFC
+Color para el fondo de los div: #FFFAF0
+Color para textos dentro de div: #212F3D
+Color para hipervínculos dentro de div: #0B5345
+
+Total de colores: 4
+
+Codigo para texto etiquetas:
+ &lt;  y  &gt;
