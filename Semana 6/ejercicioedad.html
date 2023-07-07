@@ -23,7 +23,7 @@
 
     <div class="container">
         <div class="mb-3">
-          <label for="" class="form-label">¿Cuántos años tienes?</label>
+          <label for="" class="form-label"><h1>¿Cuántos años tienes?</h1></label>
           <input type="number"
             class="form-control" name="edad" id="edad" aria-describedby="helpId" placeholder="Digite la edad del usuario">
           <small id="helpId" class="form-text text-muted">Ingresar solo numeros</small>
@@ -33,24 +33,20 @@
     </div>
 
     <div>
-            <span id="soyresultado"></span>  
+            <center><h2><span id="soyresultado">Evaluaremos si eres mayor a 65 años</span></h2></center>
     </div>
 
     <script>
-        function obtenerinformacion() {
+        function obtenerinformacion() 
+        {
+          //Obtener informacion
             var obtenerinformacion = Number(document.getElementById("edad").value);
+          //Evaluar informacion
+            if (obtenerinformacion >= 65) 
+            {document.getElementById("soyresultado").innerHTML = "El usuario es mayor de 65 años";} 
+            else 
+            {document.getElementById("soyresultado").innerHTML = "El usuario no es mayor de 65 años";}
 
-            if (obtenerinformacion > 65) {
-            alert("El usuario cumple con los requisitos de edad. (Ser mayor a 65 años)");
-        } else {
-            alert("El usuario no cumple con los requisitos de edad. (Ser mayor a 65 años)");
-        }
-
-        }
-
-        function mostrarmensajehtml() {
-        edad = Number(document.getElementById("edad").value);
-        document.getElementById("soyresultado").innerHTML = edad;
         }
 
        
