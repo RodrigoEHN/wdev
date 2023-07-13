@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>Ejercicio 1</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,19 +12,51 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+    <link rel="shortcut icon" href="../img/001.png" type="image/x-icon">
+  
 </head>
 
 <body>
 
-    <header>
+  
+  <header>
     <!-- place navbar here -->
   </header>
 
   <main>
 
- 
-
   </main>
+  <center>
+
+  <h1>Ejercicio 1</h1>
+  <p>El usuario tiene $100,000 que desea invertir.</p>
+  <h3>Primera inversion del 70% del total:</h3>
+  
+  <div>
+      <span id="resultadoHipoteca"></span>
+  </div>
+
+  <hr>
+
+  <h3>Primera inversion del 30% del total:</h3>
+  
+  <div>
+    <span id="resultadoDeposito"></span>
+  </div>
+
+  <hr>
+
+  <h1>Ganancias:</h1>
+
+  <h3>Por bono de hipoteca: <span id="1"></span></h3>
+
+  <h3>Por bono de deposito: <span id="2"></span></h3>
+
+  <h2>Total: <span id="3"></span></h2>
+
+
+
+</center>
 
   <footer>
     <!-- place footer here -->
@@ -32,15 +64,33 @@
 
   <script>
 
-   var dineroinicial = 10000;
-   var inversionbonohipoteca = 70000;
-   var inversiondeposito = 30000;
-   var intereshipoteca = (5/100); 
-   var interesdeposito = (10/100);
+//Let variables que pueden cambiar
+//Const varaibles fijas
 
-   var primermes = inversionbonohipoteca + intereshipoteca;
 
-   alert(primermes);
+    let dinero = 100000;
+    let dineroHipoteca = dinero * (70/100);
+    const dineroHipotecaInicial = dinero * (70/100);
+    let dineroDeposito = dinero * (30/100);
+    const dineroDepositoInicial = dinero * (30/100);
+    const interesHipoteca = (5/100);
+    const interesDeposito = (10/100);
+
+
+  for (let i=1; i<4; i++) 
+  {
+    //Hipoteca
+    dineroHipoteca = dineroHipoteca + (interesHipoteca * dineroHipoteca);
+    document.getElementById("resultadoHipoteca").innerHTML += "Resultado mes " + i + ": " + dineroHipoteca + " ";
+    //Deposito
+    dineroDeposito =  dineroDeposito +(interesDeposito * dineroDeposito);
+    document.getElementById("resultadoDeposito").innerHTML += "Resultado mes " + i + ": " + dineroDeposito + " ";
+  }
+
+
+  document.getElementById("1").innerHTML = dineroHipoteca-dineroHipotecaInicial;
+  document.getElementById("2").innerHTML = dineroDeposito-dineroDepositoInicial;
+  document.getElementById("3").innerHTML = (dineroHipoteca+dineroDeposito) - dinero;
 
   </script>
 
