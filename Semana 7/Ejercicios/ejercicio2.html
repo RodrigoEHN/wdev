@@ -20,11 +20,40 @@
     <!-- place navbar here -->
   </header>
   <main>
-hr
+  
+  <p>
+    Usted va a hacer compras por 12000 colones en un comercio
+    y el vendedor le ofrece un descuento de 1000 colones,
+     demuestre como sería más barato el precio final,
+       si primero le aplican el descuento y
+       luego le cobran el 13% de impuesto o que primero
+       le carguen el 13% de impuesto y
+         luego le hagan el descuento.
+  </p>
+
+  <hr>
+
+  <h2>Si se aplica el descuento antes de sumar el IVA: <span id="antes">0</span></h2>
+  <br>
+  <h2>Si se aplica el descuento despues de sumar el IVA: <span id="despues">0</span></h2>
+  <hr>
+  <h3>Conclusion</h3>
+  <p>Es mejor que se le apliquen los 1000 colones de descuento antes de sumar el IVA.</p>
+
   </main>
   <footer>
     <!-- place footer here -->
   </footer>
+
+<script>
+  let dineroInicial = 12000;
+  const descuento = 1000;
+  const impuesto = dineroInicial * (13/100);
+
+  document.getElementById("antes").innerHTML= (dineroInicial-descuento)+impuesto;
+  document.getElementById("despues").innerHTML= (dineroInicial+impuesto)+descuento;
+</script>
+
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
